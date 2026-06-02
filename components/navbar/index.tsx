@@ -90,7 +90,9 @@ const Navbar = () => {
       initial="hidden"
       animate="visible"
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled
+        isOpen
+          ? "bg-white shadow-2xl"
+          : scrolled
           ? "bg-white/95 backdrop-blur-xl shadow-2xl"
           : "bg-white/80 backdrop-blur-md"
       }`}
@@ -106,7 +108,7 @@ const Navbar = () => {
               className="flex items-center gap-3"
             >
               {/* Animated Logo Container */}
-              <img src="/logo.png" alt="Mass Biosciences Logo" className="w-16 h-16 md:w-24 md:h-24 object-contain" />
+              <img src="/logo.png" alt="Mass Biosciences Logo" className="w-16 h-16 md:w-28 md:h-28 object-contain" />
             </motion.div>
           </Link>
 
@@ -137,7 +139,7 @@ const Navbar = () => {
                   />
                   
                   {/* Text */}
-                  <span className="relative z-10">{item.name}</span>
+                  <span className="relative z-10 text-md font-medium">{item.name}</span>
                   
                   {/* Active Indicator - Modern Design */}
                   {isActive(item.href) && (
@@ -250,8 +252,6 @@ const Navbar = () => {
                     </Link>
                   </motion.div>
                 ))}
-
-          ß
 
                 {/* Mobile Menu Footer */}
                 <motion.div

@@ -1,5 +1,6 @@
 // components/WhatsAppChat.tsx
 import React, { useState, useEffect } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 interface WhatsAppChatProps {
   phoneNumber?: string;
@@ -86,7 +87,7 @@ const WhatsAppChat: React.FC<WhatsAppChatProps> = ({
       >
         <div className="relative">
           <div className="bg-[#25D366] text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
-            <span className="text-3xl font-bold">W</span>
+            <FaWhatsapp size={32} />
           </div>
           <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20"></span>
         </div>
@@ -100,7 +101,7 @@ const WhatsAppChat: React.FC<WhatsAppChatProps> = ({
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="bg-white/20 rounded-full w-10 h-10 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">W</span>
+                  <FaWhatsapp size={20} />
                 </div>
                 <div>
                   <h4 className="font-semibold text-base text-white">{companyName}</h4>
@@ -146,8 +147,8 @@ const WhatsAppChat: React.FC<WhatsAppChatProps> = ({
                   className="flex-1 bg-[#25D366] text-white py-2 px-4 rounded-lg hover:bg-[#20BA5A] transition-colors flex items-center justify-center gap-2 text-sm font-medium"
                   onClick={handleWhatsAppClick}
                 >
+                  <FaWhatsapp size={16} />
                   <span>Send to WhatsApp</span>
-                  <span>→</span>
                 </button>
                 <button 
                   className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"

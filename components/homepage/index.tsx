@@ -101,7 +101,7 @@ export default function Home() {
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
                   className="absolute inset-0 rounded-2xl"
                 />
-                <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl px-8 py-4 border border-white/20">
+                <div className="relative mt-8 md:mt-10 bg-white/10 backdrop-blur-lg rounded-2xl px-8 py-4 border border-white/20">
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                     <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">MASS</span>
                     <br />
