@@ -1,0 +1,82 @@
+// RootLayoutServer.tsx
+import type { Metadata } from "next";
+import { DM_Sans, Poppins } from "next/font/google";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Ratan V And Associates | Professional Business Services",
+  description: "Expert services in Company Incorporation, Annual Compliances, GST Filings, ITR Filings, and Startup Registration (DPIIT). Your trusted partner for business solutions.",
+  keywords: "Company Incorporation, Annual Compliances, GST Filings, ITR Filings, Startup Registration, DPIIT, Business Services",
+  authors: [{ name: "Ratan V & Associates" }],
+  openGraph: {
+    title: "Ratan V And Associates",
+    description: "Professional Business Services - Company Incorporation, GST, ITR, and更多",
+    type: "website",
+    locale: "en_IN",
+  },
+};
+
+// Configure fonts using Next.js font optimization
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: "--font-dm-sans",
+  display: 'swap',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: "--font-poppins",
+  display: 'swap',
+});
+
+export default function RootLayoutServer({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className={`${dmSans.variable} ${poppins.variable}`}>
+      <head>
+        {/* Font preconnect for better performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WHXP5YHDZF"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-WHXP5YHDZF');
+            `,
+          }}
+        />
+
+        {/* Add brand colors as CSS variables */}
+        <style>{`
+          :root {
+            --primary: #F37920;
+            --secondary: #145886;
+            --accent: #55B848;
+          }
+        `}</style>
+      </head>
+      <body
+        className={`${dmSans.className} content-transparent`}
+      >
+        {/* Google Tag Manager (if you have it) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KGJ2S772"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
+        </noscript>
+
+        {children}
+      </body>
+    </html>
+  );
+}

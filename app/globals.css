@@ -1,0 +1,597 @@
+/* DM Sans and Poppins Font Implementation */
+/* Fonts are now loaded via Next.js font optimization in RootLayoutServer.tsx */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    /* Use CSS custom properties for font families */
+    font-family: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333333;
+    min-height: 100vh;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+    background-position: center top, center top;
+    background-attachment: fixed, fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Use CSS custom properties for headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins), 'Poppins', sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #1a1a1a;
+  }
+
+  /* Specific heading weights like Trump National DC */
+  h1 {
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+  
+  h2 {
+    font-weight: 550;
+  }
+  
+  h3, h4, h5, h6 {
+    font-weight: 500;
+  }
+
+  /* Special display text - EXACT match */
+  .display-serif {
+    font-family: var(--font-poppins), 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  /* Paragraph styling like Trump National DC */
+  p {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #666666;
+  }
+
+  /* Strong/bold text */
+  strong, b {
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* Italic text */
+  em, i {
+    font-style: italic;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold-500 hover:bg-gold-600 text-white font-medium py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-medium py-3 px-6 rounded-md transition-all duration-300;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .nav-link {
+    @apply relative text-white font-medium transition-colors duration-300 hover:text-gold-500;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .tile-hover {
+    @apply transition-all duration-300 transform hover:scale-105 hover:shadow-xl;
+  }
+  
+  .footer-link {
+    @apply text-gray-400 hover:text-gold-500 transition-colors duration-300;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+  }
+
+  /* EXACT: Menu items styling */
+  .menu-item {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.2px;
+  }
+
+  /* EXACT: Section subtitle styling */
+  .section-subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666666;
+  }
+
+  /* EXACT: Caption text */
+  .caption {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #888888;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #BF953F 50%, #AA771C 100%);
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+
+/* Gold color definition - EXACT Trump National DC colors */
+:root {
+  --gold: #AD7906;
+  --gold-light: #F4E4A8;
+  --gold-dark: #B8941F;
+  --dark: #1a1a1a;
+  --light: #f8f8f8;
+}
+
+/* Button styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gold);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(212, 175, 55, 0.3);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn-primary:hover {
+  background-color: var(--gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Utility classes */
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.bg-gold-light {
+  background-color: var(--gold-light);
+}
+
+.bg-gold-dark {
+  background-color: var(--gold-dark);
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.text-gold-dark {
+  color: var(--gold-dark);
+}
+
+.border-gold {
+  border-color: var(--gold);
+}
+
+/* EXACT: Font utility classes */
+.font-poppins {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+}
+
+.font-dm-sans {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Font weight utilities */
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effects */
+.hover\:scale-110:hover {
+  transform: scale(1.1);
+}
+
+.hover\:-translate-y-2:hover {
+  transform: translateY(-0.5rem);
+}
+
+/* Transition classes */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.transition-transform {
+  transition: transform 0.3s ease;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.duration-700 {
+  transition-duration: 700ms;
+}
+
+/* Font family */
+.font-serif {
+  font-family: Georgia, serif;
+}
+
+/* Smooth transitions for all elements */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.hover\:-translate-y-2:hover {
+  transform: translateY(-0.5rem);
+}
+
+.hover\:-translate-y-3:hover {
+  transform: translateY(-0.75rem);
+}
+
+/* Shadow effects */
+.shadow-lg {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* EXACT: Additional specific styles */
+.hero-heading {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.section-heading {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 550;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.body-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #666666;
+}
+
+.menu-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  letter-spacing: 0.2px;
+}
+
+.footer-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #888888;
+}
+
+/* 360° Tour iframe optimizations */
+.tour-iframe-container {
+  isolation: isolate;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.tour-iframe {
+  pointer-events: auto !important;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: grab;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  display: block;
+  background: #000;
+}
+
+.tour-iframe:active {
+  cursor: grabbing;
+}
+
+/* Mobile touch optimization for 360 tours */
+@media (max-width: 768px) {
+  .tour-iframe {
+    touch-action: pan-x pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .tour-iframe-container {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+/* Ensure iframe container doesn't interfere with touch events */
+.iframe-wrapper {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+/* ReactQuill Editor Styles */
+.ql-container {
+  min-height: 250px;
+  font-size: 16px;
+}
+
+.ql-editor {
+  min-height: 250px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.ql-toolbar {
+  background-color: #f9fafb;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.ql-container.ql-snow {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+/* Prose Content Styling for Insights */
+.prose {
+  @apply text-gray-700;
+}
+
+.prose h1 {
+  @apply text-3xl md:text-4xl font-bold text-gray-900 mt-6 mb-4;
+}
+
+.prose h2 {
+  @apply text-2xl md:text-3xl font-bold text-gray-900 mt-6 mb-3;
+}
+
+.prose h3 {
+  @apply text-xl md:text-2xl font-bold text-gray-900 mt-5 mb-3;
+}
+
+.prose h4, .prose h5, .prose h6 {
+  @apply font-bold text-gray-900 mt-4 mb-2;
+}
+
+.prose p {
+  @apply text-base md:text-lg text-gray-700 mb-4 leading-relaxed;
+}
+
+.prose img {
+  @apply w-full h-auto object-contain rounded-lg shadow-md my-6;
+  max-width: 100%;
+  display: block;
+}
+
+.prose ol {
+  @apply list-decimal list-inside space-y-3 my-4 text-gray-700;
+}
+
+.prose ul {
+  @apply list-disc list-inside space-y-3 my-4 text-gray-700;
+}
+
+.prose li {
+  @apply text-base md:text-lg text-gray-700 leading-relaxed;
+  margin-left: 1rem;
+  padding-left: 0.5rem;
+}
+
+.prose ol li {
+  @apply list-decimal;
+}
+
+.prose ul li {
+  @apply list-disc;
+}
+
+.prose li ol,
+.prose li ul {
+  @apply mt-2 mb-0;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-[#145886] bg-blue-50 py-4 px-6 my-4 italic text-gray-700 rounded-r;
+}
+
+.prose strong {
+  @apply font-bold text-gray-900;
+}
+
+.prose em {
+  @apply italic text-gray-700;
+}
+
+.prose a {
+  @apply text-[#145886] hover:text-[#F37920] transition-colors font-semibold;
+  text-decoration: underline;
+}
+
+.prose code {
+  @apply bg-gray-100 px-3 py-1 rounded text-sm font-mono text-gray-800;
+}
+
+.prose pre {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-4;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-gray-100;
+}
+
+.prose hr {
+  @apply border-gray-200 my-6;
+}
+
+.prose table {
+  @apply w-full border-collapse my-4;
+}
+
+.prose table td,
+.prose table th {
+  @apply border border-gray-200 px-4 py-2;
+}
+
+.prose table th {
+  @apply bg-gray-100 font-bold;
+}
+
+/* Ensure images in nested elements also display properly */
+.prose ol img,
+.prose ul img,
+.prose li img {
+  @apply w-full h-auto object-contain;
+}
+
+/* Ensure numbered and unnumbered lists preserve formatting */
+.prose ol ol,
+.prose ul ul,
+.prose ol ul,
+.prose ul ol {
+  @apply my-2;
+}
